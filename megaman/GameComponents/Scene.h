@@ -16,8 +16,8 @@ public:
     virtual void Update(float delta);
     virtual void Draw();
 
-	// Handle keys: Up/Down/Left/Right
-	virtual void ProcessInput(bool up, bool down, bool left, bool right);
+    // Handle keys: Up/Down/Left/Right
+    virtual void ProcessInput(bool up, bool down, bool left, bool right);
     virtual void OnKeyDown(int keyCode);
     virtual void OnKeyUp(int keyCode);
 };

@@ -2,7 +2,10 @@
 #define _PLAYING_SCENE_H_
 
 #include "../GameComponents/Scene.h"
-#include "../GameComponents/Animation.h"
+#include "../GameComponents/Sprite.h"
+#include "../GameComponents/TileSet.h"
+#include "../GameComponents/GameMap.h"
+#include "../GameComponents/Camera.h"
 
 class PlayingScene : public Scene
 {
@@ -14,21 +17,32 @@ public:
     void Update(float delta);
     void Draw();
 
-	// Handle keys: Up/Down/Left/Right
-	void ProcessInput(bool up, bool down, bool left, bool right);
+    // Handle keys: Up/Down/Left/Right
+    void ProcessInput(bool up, bool down, bool left, bool right);
     void OnKeyDown(int keyCode);
 
 
 protected:
-    Animation *mMegaMan;
+    //Sprite *mMegaman;
 
-	D3DXVECTOR3 mPosMegaMan; // position of MegaMan
-	float mMegaManVx;		 // velocity of MegaMan
-	float mMegaManVy;
+    //GameMap *mGameMap;
 
-	float mMegaManVxLast;	 //  last vx of MegaMan before stop ( to determine the direction of MegaMan)
+    // Position of megaman
+    float mMegamanX;
+    float mMegamanY;
 
-	DWORD mLastTime;		// this is to control the animate rate of MegaMan
+    // Velocity of megaman
+    float mMegamanVx;
+    float mMegamanVy;
+
+    // Last Vx of megaman before stop (to determine the direction of megaman)
+    float mMegamanLastVx;
+
+    // this is to control the animate rate of MegaMan
+    DWORD mLastTime;
+    
+    // Megaman in the reverse direction
+    int mReverse;
 };
 
 

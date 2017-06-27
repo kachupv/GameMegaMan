@@ -11,23 +11,23 @@
 class GameMegaMan : public Game
 {
 public:
-	GameMegaMan(HINSTANCE hInstance, LPCSTR name, int frameRate);
-	~GameMegaMan();
+	GameMegaMan(HINSTANCE hInstance, LPWSTR name, int frameRate);
+    ~GameMegaMan();
 
 protected:
-	LPDIRECT3DSURFACE9 _Background;
+    LPDIRECT3DSURFACE9 _Background;
 
-	// load/init game
-	virtual void LoadResources();
+    // load/init game
+    virtual void LoadResources();
 
-	// draw game
-	void Draw();
-	void Update(float delta);
+    // draw game
+    void Draw();
+    void Update(float delta);
 
-	// handle keys left/right/up/down
-	void ProcessInput();
-	// handle key space
-	void OnKeyDown(int keyCode);
+    // handle keys left/right/up/down
+    void ProcessInput();
+    // handle key space
+    void OnKeyDown(int keyCode);
 };
 
 #endif // !_GAME_MEGAMAN_H_

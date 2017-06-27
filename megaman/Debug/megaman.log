@@ -1,5 +1,84 @@
-﻿Build started 06/05/2017 9:00:00 SA.
+﻿Build started 27/06/2017 11:07:52 CH.
+     1>Project "D:\GitHub\GameMegaMan\megaman\megaman.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gz /TP /analyze- /errorReport:prompt GameComponents\Camera.cpp GameComponents\Game.cpp GameComponents\GameGlobal.cpp GameComponents\GameMegaMan.cpp GameComponents\GameTime.cpp GameComponents\Scene.cpp GameComponents\Sprite.cpp GameComponents\TileSet.cpp GameControllers\SceneManager.cpp main.cpp MapReader\base64.cpp MapReader\tinyxml2.cpp MapReader\TmxEllipse.cpp MapReader\TmxImage.cpp MapReader\TmxImageLayer.cpp MapReader\TmxLayer.cpp MapReader\TmxMap.cpp MapReader\TmxObject.cpp MapReader\TmxObjectGroup.cpp MapReader\TmxPolygon.cpp MapReader\TmxPolyline.cpp MapReader\TmxPropertySet.cpp MapReader\TmxTerrain.cpp MapReader\TmxTerrainArray.cpp MapReader\TmxTile.cpp MapReader\TmxTileLayer.cpp MapReader\TmxTileOffset.cpp MapReader\TmxTileset.cpp MapReader\TmxUtil.cpp Scenes\PlayingScene.cpp Utils\trace.cpp
+         trace.cpp
+         PlayingScene.cpp
+         TmxUtil.cpp
+         TmxTileset.cpp
+         TmxTileOffset.cpp
+         TmxTileLayer.cpp
+         TmxTile.cpp
+         TmxTerrainArray.cpp
+         TmxTerrain.cpp
+         TmxPropertySet.cpp
+     1>d:\github\gamemegaman\megaman\mapreader\tmxpropertyset.cpp(87): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+         TmxPolyline.cpp
+         TmxPolygon.cpp
+         TmxObjectGroup.cpp
+         TmxObject.cpp
+         TmxMap.cpp
+         TmxLayer.cpp
+         TmxImageLayer.cpp
+         TmxImage.cpp
+         TmxEllipse.cpp
+         tinyxml2.cpp
+         Generating Code...
+         Compiling...
+         base64.cpp
+         main.cpp
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+         SceneManager.cpp
+         TileSet.cpp
+         Sprite.cpp
+         Scene.cpp
+         GameTime.cpp
+         GameMegaMan.cpp
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+         GameGlobal.cpp
+         Game.cpp
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+     1>d:\github\gamemegaman\megaman\gamecomponents\game.cpp(273): warning C4244: 'argument' : conversion from 'DWORD' to 'float', possible loss of data
+         Camera.cpp
+         Generating Code...
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _CRT_SECURE_NO_WARNINGS /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gz /TC /analyze- /errorReport:prompt MapReader\miniz.c
+         miniz.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\GitHub\GameMegaMan\megaman\Debug\megaman.exe" /INCREMENTAL /NOLOGO d3dx9.lib d3d9.lib dxguid.lib dinput8.lib winmm.lib zlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\GitHub\GameMegaMan\megaman\Debug\megaman.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\GitHub\GameMegaMan\megaman\Debug\megaman.lib" /MACHINE:X86 Debug\Camera.obj
+         Debug\Game.obj
+         Debug\GameGlobal.obj
+         Debug\GameMegaMan.obj
+         Debug\GameTime.obj
+         Debug\Scene.obj
+         Debug\Sprite.obj
+         Debug\TileSet.obj
+         Debug\SceneManager.obj
+         Debug\main.obj
+         Debug\base64.obj
+         Debug\miniz.obj
+         Debug\tinyxml2.obj
+         Debug\TmxEllipse.obj
+         Debug\TmxImage.obj
+         Debug\TmxImageLayer.obj
+         Debug\TmxLayer.obj
+         Debug\TmxMap.obj
+         Debug\TmxObject.obj
+         Debug\TmxObjectGroup.obj
+         Debug\TmxPolygon.obj
+         Debug\TmxPolyline.obj
+         Debug\TmxPropertySet.obj
+         Debug\TmxTerrain.obj
+         Debug\TmxTerrainArray.obj
+         Debug\TmxTile.obj
+         Debug\TmxTileLayer.obj
+         Debug\TmxTileOffset.obj
+         Debug\TmxTileset.obj
+         Debug\TmxUtil.obj
+         Debug\PlayingScene.obj
+         Debug\trace.obj
+         megaman.vcxproj -> D:\GitHub\GameMegaMan\megaman\Debug\megaman.exe
+     1>Done Building Project "D:\GitHub\GameMegaMan\megaman\megaman.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.03
+Time Elapsed 00:00:25.11

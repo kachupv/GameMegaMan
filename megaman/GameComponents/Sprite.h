@@ -3,75 +3,45 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
+#include "../Utils/trace.h"
 #include "GameGlobal.h"
+#include "Camera.h"
 
 class Sprite
 {
 public:
-    Sprite(const char* filePath, RECT sourceRect = RECT(), int width = NULL, int height = NULL, D3DCOLOR colorKey = NULL);
-    Sprite();
+	// This constructor to create the sprites for animation object
+    Sprite(const char *filePath, int width, int height, int count, int spritePerRow, D3DCOLOR colorKey = NULL);
+	// This constructor to create the tilesets object
+	Sprite(const char *filePath); 
     ~Sprite();
 
-    LPDIRECT3DTEXTURE9 GetTexture();
+    // Render current sprite with a scale, rotation and position
+    void Render(D3DXVECTOR2 Scaling, float Rotation, D3DXVECTOR2 Pos);
 
-    void Draw(D3DXVECTOR3 position = D3DXVECTOR3(), RECT sourceRect = RECT(), D3DXVECTOR2 scale = D3DXVECTOR2(), 
-        D3DXVECTOR2 transform = D3DXVECTOR2(), float angle = 0, D3DXVECTOR2 rotationCenter = D3DXVECTOR2());
+    // Advance to next sprite
+    void Next();
 
-    void SetWidth(int width);
-    int GetWidth();
+    // Reset current sprite index to 0
+    void Reset();
 
-    void SetHeight(int height);
-    int GetHeight();
+    // Get rectangle of current sprite
+    virtual RECT GetRect();
 
-    D3DXIMAGE_INFO GetImageInfo(); // lay thong tin thuc cua hinh anh duoc lay
-
-    D3DXVECTOR3 GetPosition();
-    void SetPosition(D3DXVECTOR3 pos);
-    void SetPosition(float x, float y);
-    void SetPosition(D3DXVECTOR2 pos);
-
-    D3DXVECTOR2 GetScale();
-    void SetScale(D3DXVECTOR2 scale);
-
-    D3DXVECTOR2 GetTranslation(); // phep tinh tien tu world position -> view position
-    void SetTranslation(D3DXVECTOR2 translation); // phep tinh tien: tu the world position -> view position
-
-    D3DXVECTOR2 GetRotationCenter();
-    void SetRotationCenter(D3DXVECTOR2 rotationCenter);
-
-    float GetRotation();
-    void SetRotation(float rotation); // by radian
-
-    void SetSourceRect(RECT rect);
-
-    void FlipHorizontal(bool flag); // true: lat hinh theo chieu doc, false: binh thuong
-    bool IsFlipHorizontal();
-
-    void FlipVertical(bool flag); // true: lat hinh theo chieu ngang, false: binh thuong
-    bool IsFlipVertical();
+    // Set/get current sprite index
+    void SetIndex(int index);
+    int GetIndex();
 
 protected:
-    //su dung cho ke thua
-    void InitWithSprite(const char* filePath, RECT sourceRect = RECT(), int width = NULL, int height = NULL, D3DCOLOR colorKey = NULL);
+    Sprite();
 
-    bool isRect(RECT rect);
+    LPDIRECT3DTEXTURE9 mTexture;
+    LPD3DXSPRITE mSpriteHandler;
 
-    D3DXVECTOR3             mPosition; // vi tri cua Sprite, co goc la chinh giua hinh anh Texture
-    LPDIRECT3DTEXTURE9      mTexture; // load hinh anh vao day
-    LPD3DXSPRITE            mSpriteHandler; //SpriteHandler ho tro ve hinh
-    D3DXIMAGE_INFO          mImageInfo; // thong tin thuc cua hinh anh duoc lay
-    RECT                    mSourceRect; // hinh chu nhat cat tu anh cua texture
-
-    int                     mWidth, mHeight; // kich thuoc cua texture
-
-    bool                    mIsFlipVertical; // lat theo chieu doc
-    bool                    mIsFlipHorizontal; // lat theo chieu ngang
-
-    float                   mRotation; // goc quay cua Sprite tinh theo radian
-
-    D3DXVECTOR2             mScale; // Vector tuy chinh do phong to / thu nho cua texture
-    D3DXVECTOR2             mTranslation; //Doi hinh anh vi tri thuc cua Sprite + mTranslate
-    D3DXMATRIX              mMatrix; // ma tran cua Spite ho tro trong cac phep hinh hoc
-    D3DXVECTOR2             mRotationCenter; // diem trung tam trong phep xoay hinh (origin vector)
+    int mIndex;                // Current sprite index
+    int mWidth;                // Sprite width
+    int mHeight;               // Sprite height
+    int mCount;                // Number of sprites
+    int mSpritePerRow;         // Number of sprites per row
 };
 #endif // !_SPRITE_H_
