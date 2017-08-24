@@ -8,6 +8,7 @@
 PlayingScene::PlayingScene()
 {
     Init();
+	player = new Player();
 }
 
 
@@ -84,6 +85,7 @@ void PlayingScene::Draw()
 {
 	//mGameMap->Draw();
 	//mMegaman->Render(D3DXVECTOR2(mReverse*1.0f, 1.0f), 0.0f, D3DXVECTOR2(mMegamanX, mMegamanY));
+	player->Draw();
 	
 }
 

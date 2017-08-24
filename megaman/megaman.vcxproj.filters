@@ -28,6 +28,12 @@
     <Filter Include="MapReader">
       <UniqueIdentifier>{d9853a09-3d89-468c-aff0-0ed1a7d45af2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{7855b4e2-51f8-44fe-adf7-661a9a7fa926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Player">
+      <UniqueIdentifier>{2c2814b9-e450-4142-9df4-27bfe2074d53}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -125,6 +131,21 @@
     </ClCompile>
     <ClCompile Include="MapReader\TmxUtil.cpp">
       <Filter>MapReader</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Entity.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerData.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerRunningState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\Player.cpp">
+      <Filter>GameObjects\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -229,6 +250,21 @@
     </ClInclude>
     <ClInclude Include="MapReader\zlib.h">
       <Filter>MapReader</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Entity.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerData.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerRunningState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\Player.h">
+      <Filter>GameObjects\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

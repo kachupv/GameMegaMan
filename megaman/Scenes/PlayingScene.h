@@ -6,6 +6,7 @@
 #include "../GameComponents/TileSet.h"
 #include "../GameComponents/GameMap.h"
 #include "../GameComponents/Camera.h"
+#include "../GameObjects/Player/Player.h"
 
 class PlayingScene : public Scene
 {
@@ -23,6 +24,7 @@ public:
 
 
 protected:
+	Player *player;
     //Sprite *mMegaman;
 
     //GameMap *mGameMap;

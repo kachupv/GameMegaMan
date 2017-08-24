@@ -19,6 +19,7 @@ Game::Game(HINSTANCE hInstance, LPWSTR Name, int FrameRate)
 
 void Game::InitWindow()
 {
+	trace(L"[INFO] Game::InitWindow()");
     WNDCLASSEX wc;
     wc.cbSize = sizeof(WNDCLASSEX);
 
@@ -64,6 +65,7 @@ void Game::InitWindow()
 
 void Game::InitDirectX()
 {
+	trace(L"[INFO] Game::InitDirectX()");
     mD3d = Direct3DCreate9(D3D_SDK_VERSION);
 	if (this->mD3d == NULL)
 	{
@@ -112,6 +114,7 @@ void Game::InitDirectX()
 
 void Game::InitKeyboard()
 {
+	trace(L"[INFO] Game::InitKeyboard()");
     HRESULT
         hr = DirectInput8Create
         (
@@ -123,14 +126,14 @@ void Game::InitKeyboard()
     // TO-DO: put in exception handling
     if (hr != DI_OK) return;
 
-    trace(L"DirectInput has been created");
+	trace(L"[INFO] Game::InitKeyboard() - DirectInput has been created");
 
     hr = mDirectInput->CreateDevice(GUID_SysKeyboard, &mKeyboard, NULL);
 
     // TO-DO: put in exception handling
     if (hr != DI_OK) return;
 
-    trace(L"DirectInput keyboard has been created");
+	trace(L"[INFO] Game::InitKeyboard() - DirectInput keyboard has been created");
 
     // Set the data format to "keyboard format" - a predefined data format 
     //
@@ -142,11 +145,12 @@ void Game::InitKeyboard()
 
     hr = mKeyboard->SetDataFormat(&c_dfDIKeyboard);
 
-    trace(L"SetDataFormat for keyboard successfully");
+	trace(L"[INFO] Game::InitKeyboard() - SetDataFormat for keyboard successfully");
 
     hr = mKeyboard->SetCooperativeLevel(mHWnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
 
-    trace(L"SetCooperativeLevel for keyboard successfully");
+	trace(L"[INFO] Game::InitKeyboard() - SetCooperativeLevel for keyboard successfully");
+
 
     // IMPORTANT STEP TO USE BUFFERED DEVICE DATA!
     //
@@ -165,7 +169,8 @@ void Game::InitKeyboard()
     dipdw.diph.dwHow = DIPH_DEVICE;
     dipdw.dwData = KEYBOARD_BUFFER_SIZE; // Arbitary buffer size
 
-    trace(L"SetProperty for keyboard successfully");
+	trace(L"[INFO] Game::InitKeyboard() - SetProperty for keyboard successfully");
+
 
     hr = mKeyboard->SetProperty(DIPROP_BUFFERSIZE, &dipdw.diph);
     if (hr != DI_OK) return;
@@ -173,10 +178,12 @@ void Game::InitKeyboard()
     hr = mKeyboard->Acquire();
     if (hr != DI_OK) return;
 
-    trace(L"Keyboard has been acquired successfully");
+	trace(L"[INFO] Game::InitKeyboard() - Keyboard has been acquired successfully");
+
 }
 void Game::Init()
 {
+	trace(L"[INFO] Game::Init()");
     InitWindow();
     InitDirectX();
     InitKeyboard();
@@ -253,7 +260,8 @@ void Game::Run()
 
     DWORD tickPerFrame = 100 / mFrameRate;
 
-    trace(L">>> Main game loop has been started");
+	trace(L"[INFO] Game::Run() - Main game loop has been started");
+
 
     while (!done)
     {
@@ -279,7 +287,8 @@ void Game::Run()
         ProcessInput();
     }
 
-    trace(L"Main game loop has ended");
+	trace(L"[INFO] Game::Run() - Main game loop has ended");
+
 }
 
 
